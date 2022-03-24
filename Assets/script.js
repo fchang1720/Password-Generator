@@ -13,7 +13,8 @@ function generatePassword(){
   return "password";
 }
 
-// if (passwordlength <8) {
+// if (passwordlength <8) 
+
 //   alert("please enter at least 8 characters")
 // }
 
@@ -44,13 +45,41 @@ function rdmUpper() {
 }
 console.log(rdmUpper());
       //alert, confirm, prompt
+
+var passwordLength = function() {
+  var length = window.prompt("Enter 8 for your password length.")
+  if (length != 8) {
+    window.alert("please enter 8")
+    passwordLength();
+  }
+
+}
+passwordLength();
+
+var Upper = window.confirm("Include uppercase letters in your password?")
+var Lower = window.confirm("Include lowercase letters in your password?")
+var Num = window.confirm("Include numbers in your password?")
+var Spc = window.confirm("Include special characters in your password?")
+
       // use conditionals to validate inputs (password length, user enters no inputs)
+
       // 2. create arrays for each type of character.
+var uppercase = [rdmUpper(), rdmUpper(), rdmUpper(), rdmUpper()];
+console.log(uppercase);
+var lowercase = [rdmLower(), rdmLower(), rdmLower(), rdmLower()];
+console.log(lowercase);
+var numbers = [rdmNum(), rdmNum(), rdmNum(), rdmNum()];
+console.log(numbers);
+var special = [rdmSpc(), rdmSpc(), rdmSpc(), rdmSpc()];
+console.log(special);
+
       // special characters, uppercase, lowercase, numeric
     // 3. use randomizer function to select characters from each array
     // 4. generatePassword function -- take user input, grab characters from array, and generate password.
     // 5. create empty array that represents the final password
+
     // 6. join the character arrays together based on user input
     // 7. randomize characters from the joined arrays
+
     // 8. transforming the array into a string
       // array.join
