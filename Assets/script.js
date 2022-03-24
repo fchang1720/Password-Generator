@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+var finalpassword = [];
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -59,11 +59,27 @@ var passwordLength = function() {
 }
       
 passwordLength();
-      
-var Upper = window.confirm("Include uppercase letters in your password?")
-var Lower = window.confirm("Include lowercase letters in your password?")
-var Num = window.confirm("Include numbers in your password?")
-var Spc = window.confirm("Include special characters in your password?")
+
+var passwordType = function () { 
+  var Upper = window.confirm("Include uppercase letters in your password?")
+    if (Upper) {
+      finalpassword = finalpassword.concat(uppercase);
+    }
+  var Lower = window.confirm("Include lowercase letters in your password?")
+    if (Lower) {
+      finalpassword = finalpassword.concat(lowercase);
+    }
+  var Num = window.confirm("Include numbers in your password?")
+    if (Num) {
+      finalpassword = finalpassword.concat(numbers);
+    }
+  var Spc = window.confirm("Include special characters in your password?")
+    if (Spc) {
+      finalpassword = finalpassword.concat(special);
+    }
+}
+
+passwordType();
       // 2. create arrays for each type of character.
 var uppercase = [rdmUpper(), rdmUpper(), rdmUpper(), rdmUpper()];
 console.log(uppercase);
@@ -78,7 +94,7 @@ console.log(special);
     // 3. use randomizer function to select characters from each array
     // 4. generatePassword function -- take user input, grab characters from array, and generate password.
     // 5. create empty array that represents the final password
-var finalpassword = [];
+
     // 6. join the character arrays together based on user input
     // 7. randomize characters from the joined arrays
 
