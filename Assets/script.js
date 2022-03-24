@@ -1,16 +1,24 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var finalpassword = [];
+
 // Write password to the #password input
 function writePassword() {
+  if(passwordInput){
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
+  }
 }
+
+
 function generatePassword(){
-  return "password";
+  var passMaster = []
+  for( var i = 0; i < length; i++) {
+    var randomIndex = Math.floor(Math.random() * finalpassword.length);
+    var password = passMaster + finalpassword[randomIndex];
+  }
+ return (password);
 }
 
 
@@ -28,17 +36,25 @@ var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "?", "<", ">", 
 console.log(special);
 
 
+var finalpassword = [];
 
-      
-var passwordLength = function() {
-  var length = window.parseInt(prompt("Enter a number between 8 and 128 for your password length."))
+
+var passwordInput = function() {
+  
+  var length = window.parseInt(prompt("Enter a number between 8 and 128 for your password length."));
     if (isNaN(length) || length < 8 || length > 128) {
       window.alert("please enter a number between 8 and 128")
-      passwordLength();
+      passwordInput();
     }
+    else{
+      
+     
+    var passwordType = function() {
+
     if (confirm("Include uppercase letters in your password?")) {
     
-      finalpassword = finalpassword.concat(uppercase);
+    finalpassword = finalpassword.concat(uppercase);
+    } 
     if (confirm("Include lowercase letters in your password?")) {
 
       finalpassword = finalpassword.concat(lowercase);
@@ -52,10 +68,18 @@ var passwordLength = function() {
       finalpassword = finalpassword.concat(special);
     }
     
-  }  
-}
+
+    }
+    passwordType(); 
+    // if (passwordType) {
+    //   console.log(finalpassword);
+    // }
+  }
+} 
+  
+
       
-passwordLength();
+passwordInput();
 
   // if (passwordlength <8) 
 
