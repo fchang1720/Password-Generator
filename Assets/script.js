@@ -56,27 +56,14 @@ var passwordLength = function() {
       passwordLength();
     }
 
-    if (confirm("Include uppercase letters in your password?")) {
-      finalpassword =  finalpassword.concat(uppercase);
-    }
-
-    if (confirm("Include lowercase letters in your password?")) {
-      finalpassword = finalpassword.concat(lowercase);
-    }
-
-    if (confirm("Include numbers in your password?")) {
-      finalpassword = finalpassword.concat(numbers);
-    }
-
-    if (confirm("Include special characters in your password?")) {
-      finalpassword = finalpassword.concat(special);
-    }
-    return true;
 }
       
 passwordLength();
       
-
+var Upper = window.confirm("Include uppercase letters in your password?")
+var Lower = window.confirm("Include lowercase letters in your password?")
+var Num = window.confirm("Include numbers in your password?")
+var Spc = window.confirm("Include special characters in your password?")
       // 2. create arrays for each type of character.
 var uppercase = [rdmUpper(), rdmUpper(), rdmUpper(), rdmUpper()];
 console.log(uppercase);
