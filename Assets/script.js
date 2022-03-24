@@ -24,27 +24,7 @@ generateBtn.addEventListener("click", writePassword);
 // 1. create variables to save user input from prompts
     // password length (string) -> need it to be integer ultimately
     // specialCharacters (boolean) confirm box
-function rdmSpc() {
-  const symbols = '!@#$%^&*(){}[]=+?<>/.,'
-  return symbols[Math.floor(Math.random() * symbols.length)];
-}
-console.log(rdmSpc());
-    // numbers
-function rdmNum() {
-  return String.fromCharCode(Math.floor(Math.random() * 10) + 48)
-}
-console.log(rdmNum());
-    // lowercaseCharacters (boolean)
-function rdmLower() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
-console.log(rdmLower());
-    // uppercaseCharacters (boolean)
-function rdmUpper() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 65)
-}
-console.log(rdmUpper());
-      //alert, confirm, prompt
+
 
 
 
