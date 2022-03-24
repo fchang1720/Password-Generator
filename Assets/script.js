@@ -46,22 +46,36 @@ function rdmUpper() {
 console.log(rdmUpper());
       //alert, confirm, prompt
 
-var passwordLength = function() {
-  var length = window.prompt("Enter 8 for your password length.")
-  if (length != 8) {
-    window.alert("please enter 8")
-    passwordLength();
-  }
 
-}
-passwordLength();
-
-var Upper = window.confirm("Include uppercase letters in your password?")
-var Lower = window.confirm("Include lowercase letters in your password?")
-var Num = window.confirm("Include numbers in your password?")
-var Spc = window.confirm("Include special characters in your password?")
 
       // use conditionals to validate inputs (password length, user enters no inputs)
+var passwordLength = function() {
+  var length = window.parseInt(prompt("Enter a number between 8 and 128 for your password length."))
+    if (isNaN(length) || length < 8 || length > 128) {
+      window.alert("please enter a number between 8 and 128")
+      passwordLength();
+    }
+
+    if (confirm("Include uppercase letters in your password?")) {
+      finalpassword =  finalpassword.concat(uppercase);
+    }
+
+    if (confirm("Include lowercase letters in your password?")) {
+      finalpassword = finalpassword.concat(lowercase);
+    }
+
+    if (confirm("Include numbers in your password?")) {
+      finalpassword = finalpassword.concat(numbers);
+    }
+
+    if (confirm("Include special characters in your password?")) {
+      finalpassword = finalpassword.concat(special);
+    }
+    return true;
+}
+      
+passwordLength();
+      
 
       // 2. create arrays for each type of character.
 var uppercase = [rdmUpper(), rdmUpper(), rdmUpper(), rdmUpper()];
@@ -73,11 +87,11 @@ console.log(numbers);
 var special = [rdmSpc(), rdmSpc(), rdmSpc(), rdmSpc()];
 console.log(special);
 
-      // special characters, uppercase, lowercase, numeric
+    
     // 3. use randomizer function to select characters from each array
     // 4. generatePassword function -- take user input, grab characters from array, and generate password.
     // 5. create empty array that represents the final password
-
+var finalpassword = [];
     // 6. join the character arrays together based on user input
     // 7. randomize characters from the joined arrays
 
