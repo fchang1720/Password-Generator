@@ -39,8 +39,8 @@ console.log(special);
 var passwordInput = function() {
   var finalpassword = [];
   length = window.parseInt(prompt("Enter a number between 8 and 128 for your password length."));
-    if (isNaN(length) || length < 8 || length > 128) {
-      window.alert("please enter a number between 8 and 128")
+    while (isNaN(length) || length < 8 || length > 128 || "") {
+      length = window.parseInt(prompt("Enter a number between 8 and 128 for your password length."));
     }
       
     // while loop.
