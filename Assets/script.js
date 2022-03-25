@@ -14,8 +14,8 @@ function writePassword() {
 }
 
 function generatePassword(){
+  return passwordInput(); 
  
- return "password";
 }
 
 
@@ -41,9 +41,11 @@ var passwordInput = function() {
   length = window.parseInt(prompt("Enter a number between 8 and 128 for your password length."));
     if (isNaN(length) || length < 8 || length > 128) {
       window.alert("please enter a number between 8 and 128")
-      passwordInput();
     }
-    else{
+      
+    // while loop.
+    
+    
       
     if (confirm("Include uppercase letters in your password?")) {
     
@@ -61,16 +63,19 @@ var passwordInput = function() {
  
       finalpassword = finalpassword.concat(special);
     }
-    
-
+    var password = ""
+    for(let i = 0; i < length; i++) {
+      password = password + finalpassword[Math.floor(Math.random() * finalpassword.length)]
+    }
+     return password; 
     }
  
     // if (passwordType) {
     //   console.log(finalpassword);
     // }
-  }
+  
  
-passwordInput();  
+ 
 
       
 
